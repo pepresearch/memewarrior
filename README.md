@@ -18,3 +18,6 @@ Drag and Drop an image file onto "memewarrior.bat"<br />
 
 To run on Mac<br />
 Drag and Drop an image file onto "memewarrior.scpt"<br />
+
+# About the Author
+Find me on Twatter @omegaroyalau.
