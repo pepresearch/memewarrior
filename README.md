@@ -19,5 +19,7 @@ Drag and Drop an image file onto "memewarrior.bat"<br />
 To run on Mac<br />
 Drag and Drop an image file onto "memewarrior.scpt"<br />
 
+<b>Example:</b> If you have an image called <code>&lt;some directory&gt;/kek.jpg</code> then drag and drop it onto the appropriate file (see above) and it will create a new image file called <code>&lt;some directory&gt;/kek_me.jpg</code>.
+
 # About the Author
 Find me on Twatter @omegaroyalau.
