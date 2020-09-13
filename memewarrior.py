@@ -5,18 +5,24 @@ from random import *
 import sys
 import os
 
-def randomize_color (pxl,range):
-    ret = list()
-    for p in pxl:
-        r = (int)(randrange(range) - (int)(range/2))
-        if( p + r > 256 ):
-            p = 256 - abs( r )
-        elif( p + r < 0 ):
-            p = abs( r )
-        else:
-            p = p + r
-        ret.append(p)
-    return tuple(ret)
+def randomize_int (val, range):
+    r = (int)(randrange(range) - (int)(range/2))
+    if( val + r > 256 ):
+        val = 256 - abs( r )
+    elif( val + r < 0 ):
+        val = abs( r )
+    else:
+        val = val + r
+    return val
+
+def randomize_pixel (pxl,range):
+    try:
+        ret = list()
+        for p in pxl:
+            ret.append( randomize_int( p, range ) )
+        return tuple(ret)
+    except TypeError:
+        return randomize_int( pxl, range )
 
 inpath = sys.argv[1]
 f, e = os.path.splitext(inpath)
@@ -39,7 +45,7 @@ width, height = memeImage.size
 for x in range(width):
     for y in range(height):
         pxl = memeImage.getpixel( (x,y) )
-        pxl = randomize_color( pxl, rng )
+        pxl = randomize_pixel( pxl, rng )
         memeImage.putpixel( (x,y), pxl )
 
 memeImage.save(outpath)
